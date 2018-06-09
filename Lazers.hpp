@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enemy.cpp                                          :+:      :+:    :+:   */
+/*   Lazers.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroutled <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/09 08:11:45 by kroutled          #+#    #+#             */
-/*   Updated: 2018/06/09 08:11:46 by kroutled         ###   ########.fr       */
+/*   Created: 2018/06/09 08:42:57 by kroutled          #+#    #+#             */
+/*   Updated: 2018/06/09 08:42:58 by kroutled         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Enemy.hpp"
+#ifndef LAZERS_HPP
+# define LAZERS_HPP
 
-Enemy::Enemy()
-{
-    return;
-}
+class Lazers {
 
-Enemy::Enemy( Enemy const &src )
-{
-    *this = src;
-    return;
-}
+    private:
 
-Enemy::~Enemy( void )
-{
-    return;
-}
+    public:
+        Lazers( void );
+        Lazers( Lazer const &src);
+        ~Lazers( void );
 
-Enemy   &Enemy::operator=(Enemy const &rhs)
-{
+        Lazers  &operator=(Lazers const &rhs);
+};
 
-}
+#endif

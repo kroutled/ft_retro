@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Entity.hpp"
+
 Entity::Entity ( void )
 {
     return;
 }
 
-Entity  Entity::Entity(Entity const &src)
+Entity  Entity::Entity( Entity const &src )
 {
     *this = src;
     return;

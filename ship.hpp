@@ -16,9 +16,13 @@
 class Ship{
 
     private:
-
+    
     public:
+        Ship( void );
+        Ship(Ship const &src);
+        ~Ship( void );
 
+        Ship    &operator=(Ship const &rhs);
 };
 
 #endif

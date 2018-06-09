@@ -27,6 +27,7 @@ int main(void)
 {
     int     key = 0;
 
+    box(stdscr, '*', '*')
     ft_createWindow();
     while (1)
     {

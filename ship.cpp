@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Ship.hpp"
 
+Ship::Ship ()
+{
+    return;
+}
+
+Ship::Ship( Ship const &src )
+{
+    *this = src;
+    return;
+}
+
+Ship::~Ship( void )
+{
+    return;
+}

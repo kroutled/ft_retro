@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enemy.cpp                                          :+:      :+:    :+:   */
+/*   Lazers.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kroutled <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/09 08:11:45 by kroutled          #+#    #+#             */
-/*   Updated: 2018/06/09 08:11:46 by kroutled         ###   ########.fr       */
+/*   Created: 2018/06/09 08:42:51 by kroutled          #+#    #+#             */
+/*   Updated: 2018/06/09 08:42:52 by kroutled         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Enemy.hpp"
+#include "Lazers.hpp"
 
-Enemy::Enemy()
+Lazers::Lazers()
 {
-    return;
+
 }
 
-Enemy::Enemy( Enemy const &src )
+Lazers::Lazers(Lazers const &src)
 {
     *this = src;
     return;
 }
 
-Enemy::~Enemy( void )
+Lazers::~Lazers()
 {
     return;
 }
 
-Enemy   &Enemy::operator=(Enemy const &rhs)
+Lazers  &Lazers::operator=(Lazers const &rhs)
 {
 
 }

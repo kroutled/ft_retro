@@ -18,7 +18,11 @@ class Enemy{
     private:
 
     public:
+        Enemy( void );
+        Enemy( Enemy const &src );
+        ~Enemy( void );
 
+        Entity  &operator=( Entity const &rhs );
 };
 
 #endif
