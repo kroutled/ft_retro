@@ -33,6 +33,7 @@ class Enemy : public Entity{
         char    getBody( void );
         void    ft_moveDown( void );
         void    ft_moveUp( void );
+        int     getMaxX(void);
 };
 
 #endif

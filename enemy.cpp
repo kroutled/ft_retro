@@ -12,9 +12,11 @@
 
 #include "Enemy.hpp"
 
+Enemy::Enemy( void ) {}
+
 Enemy::Enemy(int h, int w, int maxh, int maxw, char body) : Entity (h, w, maxh, maxw, body)
 {
-    std::cout << "enemy created" << std::endl;
+    //std::cout << "enemy created" << std::endl;
     return;
 }
 
@@ -42,9 +44,10 @@ Enemy   &Enemy::operator=(Enemy const &rhs)
 
 void    Enemy::displayEnemy( void )
 {
-    this->_yPos = this->_maxYPos / 2;
-    this->_xPos = this->_maxXPos / 2;
-    mvaddch(this->_xPos, this->_yPos, this->_body);
+    int i = rand() % this->getMaxX() + 1;
+    this->_yPos = 1;
+    this->_xPos = i;
+    mvaddch(this->_yPos, this->_xPos, this->_body);
 }
 
 int     Enemy::getXPos( void )
@@ -76,4 +79,8 @@ void    Enemy::ft_moveDown( void )
     
     this->_yPos++;
     return;
+}
+
+int    Enemy::getMaxX(void) {
+    return this->_maxXPos;    
 }

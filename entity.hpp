@@ -37,13 +37,13 @@ class Entity{
 
         Entity  &operator=(Entity const &rhs);
 
-        void    ft_shoot( void );
+        void            ft_shoot( void );
         virtual void    ft_moveDown( void ) = 0;
         virtual void    ft_moveUp( void ) = 0;
-        void    ft_moveLeft( void );
-        void    ft_moveRight( void );
-        int     ft_getInput (int key);
-        void    ft_display( void );
+        void            ft_moveLeft( void );
+        void            ft_moveRight( void );
+        int             ft_getInput (int key);
+        void            ft_display( void );
 };
 
 #endif 

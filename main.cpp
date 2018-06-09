@@ -29,6 +29,7 @@ void    ft_createWindow(void)
 
 int main(void)
 {   
+    srand(time(NULL));
     int x = 0;
     int y = 0;
     int key = 0;
@@ -36,10 +37,20 @@ int main(void)
     ft_createWindow();
     getmaxyx(stdscr, y, x);
     Ship    player = Ship(0, 0, y, x, '$');
+    int i = 0;
+    
+    Enemy   enemies[5];
+    while (i < 5)
+    {
+        enemies[i] = Enemy(0, 0, y, x, '#');
+        enemies[i].displayEnemy();
+        i++;
+    //
+    }
     player.setup();
-    Enemy   enemy = Enemy(0, 0, y, x, '#');
     while (1) {
         box(stdscr, '*', '*');
+        i = 0;
         key = getch();
         player.ft_getInput(key);
         if (player.ft_getInput(key) == 0)
