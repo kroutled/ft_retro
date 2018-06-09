@@ -19,13 +19,15 @@
 class Entity{
 
     private:
-        int     maxXPos;
-        int     maxYPos;
-        int     xPos;
-        int     yPos;
-        char    body;
+        int     _maxXPos;
+        int     _maxYPos;
+        int     _xPos;
+        int     _yPos;
+        char    _body;
 
     public:
+
+        Entity ( void );
         Entity( int xPos, int yPos, int maxXPos, int maxYPos );
         Entity( Entity const &src );
         ~Entity( void );

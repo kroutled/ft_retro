@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <ncurses.h>
+#include "Entity.hpp"
 
 //function used to set up the window that the game is in
 void    ft_createWindow(void)
@@ -24,18 +25,10 @@ void    ft_createWindow(void)
 }
 
 int main(void)
-{
-    int     key = 0;
+{   
+    int w, h = 0;
+    getmaxyx(stdscr, h, w);
+    Entity body = Entity(0, 0, h, w);
 
-    box(stdscr, '*', '*')
-    ft_createWindow();
-    while (1)
-    {
-        key = getch();
-        ft_checkKey(key);
-        refresh();
-        endwin();
-    }
-    endwin();
     return 0;
 }

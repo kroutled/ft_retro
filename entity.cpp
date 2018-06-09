@@ -17,7 +17,12 @@ Entity::Entity ( void )
     return;
 }
 
-Entity  Entity::Entity( Entity const &src )
+Entity::Entity (int maxXPos, int maxYPos, int xPos, int yPos) : _maxXPos(xPos), _maxYPos(yPos), _xPos(maxXPos), _yPos(maxYPos)
+{
+    return;
+}
+
+Entity::Entity( Entity const &src )
 {
     *this = src;
     return;
@@ -30,13 +35,13 @@ Entity::~Entity ( void )
 
 Entity     &Entity::operator=( Entity const &rhs)
 {
-    this->maxXPos = rhs.maxXPos;
-    this->maxYPos = rhs.maxYPos;
-    this->xPos = rhs.xPos;
-    this->yPos = rhs.yPos;
-    this->body = rhs.body;
+    this->_maxXPos = rhs._maxXPos;
+    this->_maxYPos = rhs._maxYPos;
+    this->_xPos = rhs._xPos;
+    this->_yPos = rhs._yPos;
+    this->_body = rhs._body;
 
-    return *this
+    return *this;
 }
 
 void    ft_moveUp( void )
