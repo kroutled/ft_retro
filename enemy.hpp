@@ -13,7 +13,7 @@
 #ifndef ENEMY_HPP
 # define ENEMY_HPP
 
-class enemy{
+class Enemy{
 
     private:
 

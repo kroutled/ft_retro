@@ -13,7 +13,10 @@
 #ifndef ENTITY_HPP
 # define ENTITY_HPP
 
-class entity{
+#include <iostream>
+#include <string>
+
+class Entity{
 
     private:
         int     maxXPos;
@@ -23,14 +26,17 @@ class entity{
         char    body;
 
     public:
-        entity( void );
+        Entity( int xPos, int yPos, int maxXPos, int maxYPos );
+        Entity( Entity const &src );
+        ~Entity( void );
 
-        entity( entity &src );
-        ~entity( void );
+        Entity  &operator=(Entity const &rhs);
 
-        entity  *operator=(entity &rhs);
-
-        void    shoot( void );
+        void    ft_shoot( void );
+        void    ft_moveDown( void );
+        void    ft_moveUp( void );
+        void    ft_moveLeft( void );
+        void    ft_moveRight( void );
 };
 
 #endif 

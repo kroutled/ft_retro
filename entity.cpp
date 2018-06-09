@@ -10,17 +10,49 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-entity::entity ( void )
+Entity::Entity ( void )
 {
     return;
 }
 
-entity  entity::entity(entity &src)
+Entity  Entity::Entity(Entity const &src)
 {
-    
+    *this = src;
+    return;
 }
 
-entity::~entity ( void )
+Entity::~Entity ( void )
 {
     return;
+}
+
+Entity     &Entity::operator=( Entity const &rhs)
+{
+    this->maxXPos = rhs.maxXPos;
+    this->maxYPos = rhs.maxYPos;
+    this->xPos = rhs.xPos;
+    this->yPos = rhs.yPos;
+    this->body = rhs.body;
+
+    return *this
+}
+
+void    ft_moveUp( void )
+{
+
+}
+
+void    ft_moveDown( void )
+{
+
+}
+
+void    ft_moveRight( void )
+{
+
+}
+
+void    ft_moveLeft( void )
+{
+
 }
