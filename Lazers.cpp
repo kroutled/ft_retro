@@ -42,21 +42,27 @@ Lazers  &Lazers::operator=(Lazers const &rhs)
     return *this;
 }
 
-void Lazers::moveUp(void) {
+// void Lazers::moveUp(void) {
+//     mvaddch(this->_yPos, this->_xPos, ' ');
+//     this->_yPos--;
+//     mvaddch(this->_yPos, this->_xPos, this->_body);
+// }
+
+void    Lazers::placeBullet (int y, int x)
+{
+    this->_xPos = x;
+    this->_yPos = y - 1;
+}
+
+void    Lazers::ft_moveUp( void )
+{
     mvaddch(this->_yPos, this->_xPos, ' ');
     this->_yPos--;
     mvaddch(this->_yPos, this->_xPos, this->_body);
-}
-
-void    Enemy::ft_moveUp( void )
-{
-    mvaddch(this->_yPos, this->_xPos, ' ');
-    
-    this->_yPos--;
     return;
 }
 
-void    Enemy::ft_moveDown( void )
+void    Lazers::ft_moveDown( void )
 {
     mvaddch(this->_yPos, this->_xPos, ' ');
     this->_yPos++;

@@ -61,3 +61,13 @@ void    Ship::ft_moveUp( void )
 {
     return;
 }
+
+int    Ship::getX( void )
+{
+    return this->_xPos;
+}
+
+int    Ship::getY( void )
+{
+    return this->_yPos;
+}

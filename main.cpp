@@ -16,7 +16,7 @@
 #include "Entity.hpp"
 #include "Enemy.hpp"
 #include "Ship.hpp"
-//#include "Lazers.hpp"
+#include "Lazers.hpp"
 
 //function used to set up the window that the game is in
 void    ft_createWindow(void)
@@ -41,7 +41,7 @@ int main(void)
     getmaxyx(stdscr, y, x);
 
     Ship    player = Ship(0, 0, y, x, '$');
-    // Lazers  bullets = Lazers(0, 0, y, x, '.');
+    Lazers  bullets = Lazers(0, 0, y, x, '.');
     Enemy   enemies[5];
     while (i < 5)
     {
@@ -57,10 +57,11 @@ int main(void)
         player.ft_getInput(key);
         if (player.ft_getInput(key) == 0)
             break;
-        // if (key == KEY_UP)
-        // {
-        //     bullets.ft_moveup();
-        // }
+        bullets.placeBullet(player.getY(), player.getX());
+        if (key == KEY_UP)
+        {
+            bullets.ft_moveUp();
+        }
         enemies[i].ft_moveDown();
         refresh();
         usleep(80000);

@@ -29,6 +29,8 @@ class Ship : public Entity{
         virtual void    ft_moveDown( void );
         virtual void    ft_moveUp( void );
         void    setup( void );
+        int    getX( void );
+        int    getY( void );
 };
 
 #endif

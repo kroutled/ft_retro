@@ -28,6 +28,9 @@ class Lazers : public Entity{
         Lazers  &operator=(Lazers const &rhs);
 
         void moveUp(void);
+        void    ft_moveDown( void );
+        void    ft_moveUp( void );
+        void    placeBullet( int y, int x);
 };
 
 #endif
