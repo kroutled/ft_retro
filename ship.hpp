@@ -13,16 +13,22 @@
 #ifndef SHIP_HPP
 # define SHIP_HPP
 
-class Ship{
+#include "Entity.hpp"
+
+class Ship : public Entity{
 
     private:
-    
+
     public:
-        Ship( void );
+        Ship( int h, int w, int maxh, int maxy, char body );
         Ship(Ship const &src);
         ~Ship( void );
 
         Ship    &operator=(Ship const &rhs);
+
+        virtual void    ft_moveDown( void );
+        virtual void    ft_moveUp( void );
+        void    setup( void );
 };
 
 #endif

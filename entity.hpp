@@ -15,10 +15,13 @@
 
 #include <iostream>
 #include <string>
+#include <ncurses.h>
 
 class Entity{
 
     private:
+
+    protected:
         int     _maxXPos;
         int     _maxYPos;
         int     _xPos;
@@ -28,17 +31,19 @@ class Entity{
     public:
 
         Entity ( void );
-        Entity( int xPos, int yPos, int maxXPos, int maxYPos );
+        Entity( int xPos, int yPos, int maxXPos, int maxYPos, char body);
         Entity( Entity const &src );
         ~Entity( void );
 
         Entity  &operator=(Entity const &rhs);
 
         void    ft_shoot( void );
-        void    ft_moveDown( void );
-        void    ft_moveUp( void );
+        virtual void    ft_moveDown( void ) = 0;
+        virtual void    ft_moveUp( void ) = 0;
         void    ft_moveLeft( void );
         void    ft_moveRight( void );
+        int     ft_getInput (int key);
+        void    ft_display( void );
 };
 
 #endif 

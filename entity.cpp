@@ -14,11 +14,13 @@
 
 Entity::Entity ( void )
 {
+    std::cout << "Entity void created" << std::endl;
     return;
 }
 
-Entity::Entity (int maxXPos, int maxYPos, int xPos, int yPos) : _maxXPos(xPos), _maxYPos(yPos), _xPos(maxXPos), _yPos(maxYPos)
+Entity::Entity (int maxXPos, int maxYPos, int xPos, int yPos, char body) : _maxXPos(xPos), _maxYPos(yPos), _xPos(maxXPos), _yPos(maxYPos), _body(body)
 {
+    std::cout << "Entity created" << std::endl;
     return;
 }
 
@@ -44,22 +46,79 @@ Entity     &Entity::operator=( Entity const &rhs)
     return *this;
 }
 
-void    ft_moveUp( void )
-{
+// void    Entity::ft_moveUp( void )
+// {
+//     mvaddch(this->_yPos, this->_xPos, ' ');
+    
+//     this->_yPos--;
+//     return;
+// }
 
+// void    Entity::ft_moveDown( void )
+// {
+//     mvaddch(this->_yPos, this->_xPos, ' ');
+    
+//     this->_yPos++;
+//     return;
+// }
+
+void    Entity::ft_moveRight( void )
+{
+    mvaddch(this->_yPos, this->_xPos, ' ');
+    if (this->_xPos + 1 < this->_maxXPos - 1)
+        this->_xPos++;
+    return;
+} 
+
+void    Entity::ft_moveLeft( void )
+{
+    mvaddch(this->_yPos, this->_xPos, ' ');
+    if (this->_xPos - 1 > 0)
+        this->_xPos--;
+    return;
 }
 
-void    ft_moveDown( void )
+int     Entity::ft_getInput (int key)
 {
-
+    if (key == 'q')
+        return (0);
+    if (key == KEY_UP)
+    {
+        ft_moveUp();
+        ft_display();
+        return (1);
+    }
+    else if (key == KEY_DOWN)
+    {
+        ft_moveDown();
+        ft_display();
+        return (1);
+    }
+    else if (key == KEY_LEFT )
+    {
+        ft_moveLeft();
+        this->ft_display();
+        return (1);
+    }
+    else if (key == KEY_RIGHT)
+    {
+        ft_moveRight();
+        this->ft_display();
+        return (1);
+    }
+    else if(key == ' ')
+    {
+        this->ft_moveRight();
+        this->ft_display();
+        return(1);
+    }
+    else
+        return (1);
 }
 
-void    ft_moveRight( void )
+void    Entity::ft_display( void )
 {
-
-}
-
-void    ft_moveLeft( void )
-{
-
+    mvaddch(this->_yPos, this->_xPos, this->_body);
+    refresh();
+    return;
 }

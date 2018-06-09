@@ -12,7 +12,10 @@
 
 #include <iostream>
 #include <ncurses.h>
+#include <unistd.h>
 #include "Entity.hpp"
+#include "Enemy.hpp"
+#include "Ship.hpp"
 
 //function used to set up the window that the game is in
 void    ft_createWindow(void)
@@ -26,9 +29,24 @@ void    ft_createWindow(void)
 
 int main(void)
 {   
-    int w, h = 0;
-    getmaxyx(stdscr, h, w);
-    Entity body = Entity(0, 0, h, w);
+    int x = 0;
+    int y = 0;
+    int key = 0;
 
-    return 0;
+    ft_createWindow();
+    getmaxyx(stdscr, y, x);
+    Ship    player = Ship(0, 0, y, x, '$');
+    player.setup();
+    Enemy   enemy = Enemy(0, 0, y, x, '#');
+    while (1) {
+        box(stdscr, '*', '*');
+        key = getch();
+        player.ft_getInput(key);
+        if (player.ft_getInput(key) == 0)
+            break;
+        refresh();
+    }
+    endwin();
+
+    return (0);
 }

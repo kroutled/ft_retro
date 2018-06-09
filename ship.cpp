@@ -12,8 +12,14 @@
 
 #include "Ship.hpp"
 
-Ship::Ship ()
+Ship::Ship ( int h, int w, int maxh, int maxw, char body ) //: Entity (h, w, maxw, maxh, body)
 {
+    this->_xPos = w;
+    this->_yPos = h;
+    this->_maxXPos = maxw;
+    this->_maxYPos = maxh;
+    this->_body = body;
+    std::cout << "ship created" << std::endl;
     return;
 }
 
@@ -24,6 +30,34 @@ Ship::Ship( Ship const &src )
 }
 
 Ship::~Ship( void )
+{
+    return;
+}
+
+Ship    &Ship::operator=(Ship const &rhs)
+{
+    this->_maxXPos = rhs._maxXPos;
+    this->_maxYPos = rhs._maxYPos;
+    this->_xPos = rhs._xPos;
+    this->_yPos = rhs._yPos;
+    this->_body = rhs._body;
+
+    return *this;
+}
+
+void    Ship::setup( void )
+{
+    this->_xPos = this->_maxXPos / 2;
+    this->_yPos = this->_maxYPos -3;
+    mvaddch(this->_yPos, this->_xPos, this->_body);
+}
+
+void    Ship::ft_moveDown( void )
+{
+    return;
+}
+
+void    Ship::ft_moveUp( void )
 {
     return;
 }

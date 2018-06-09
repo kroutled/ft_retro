@@ -14,7 +14,7 @@
 
 Lazers::Lazers()
 {
-
+    return;
 }
 
 Lazers::Lazers(Lazers const &src)
