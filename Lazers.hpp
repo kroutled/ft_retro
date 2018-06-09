@@ -13,16 +13,21 @@
 #ifndef LAZERS_HPP
 # define LAZERS_HPP
 
-class Lazers {
+#include "Entity.hpp"
+
+class Lazers : public Entity{
 
     private:
 
     public:
         Lazers( void );
-        Lazers( Lazer const &src);
+        Lazers( int h, int w, int maxh, int maxw, char body );
+        Lazers( Lazers const &src);
         ~Lazers( void );
 
         Lazers  &operator=(Lazers const &rhs);
+
+        void moveUp(void);
 };
 
 #endif

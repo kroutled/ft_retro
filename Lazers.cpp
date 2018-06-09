@@ -11,8 +11,11 @@
 /* ************************************************************************** */
 
 #include "Lazers.hpp"
+#include "unistd.h"
 
-Lazers::Lazers()
+Lazers::Lazers( void ){}
+
+Lazers::Lazers(int h, int w, int maxh, int maxw, char body) : Entity(h, w, maxh, maxw, body)  
 {
     return;
 }
@@ -30,5 +33,33 @@ Lazers::~Lazers()
 
 Lazers  &Lazers::operator=(Lazers const &rhs)
 {
+    this->_maxXPos = rhs._maxXPos;
+    this->_maxYPos = rhs._maxYPos;
+    this->_xPos = rhs._xPos;
+    this->_yPos = rhs._yPos;
+    this->_body = rhs._body;
 
+    return *this;
+}
+
+void Lazers::moveUp(void) {
+    mvaddch(this->_yPos, this->_xPos, ' ');
+    this->_yPos--;
+    mvaddch(this->_yPos, this->_xPos, this->_body);
+}
+
+void    Enemy::ft_moveUp( void )
+{
+    mvaddch(this->_yPos, this->_xPos, ' ');
+    
+    this->_yPos--;
+    return;
+}
+
+void    Enemy::ft_moveDown( void )
+{
+    mvaddch(this->_yPos, this->_xPos, ' ');
+    this->_yPos++;
+    mvaddch(this->_yPos, this->_xPos, this->_body);
+    return;
 }

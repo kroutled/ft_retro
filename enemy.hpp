@@ -34,6 +34,7 @@ class Enemy : public Entity{
         void    ft_moveDown( void );
         void    ft_moveUp( void );
         int     getMaxX(void);
+        void    move(void);
 };
 
 #endif
