@@ -6,7 +6,7 @@
 /*   By: kroutled <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 08:11:59 by kroutled          #+#    #+#             */
-/*   Updated: 2018/06/09 08:12:00 by kroutled         ###   ########.fr       */
+/*   Updated: 2018/06/10 11:24:18 by kroutled         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,7 @@ int    Ship::getY( void )
     return this->_yPos;
 }
 
-void    Ship::getScore( void )
-{
-    return this->_score;
-}
-
 void    Ship::setScore( int score)
 {
-    this->_score += 10;
+    this->_score += score;
 }
