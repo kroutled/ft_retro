@@ -31,6 +31,8 @@ class Lazers : public Entity{
         void    ft_moveDown( void );
         void    ft_moveUp( void );
         void    placeBullet( int y, int x);
+        int     getY( void );
+        int     getX( void );
 };
 
 #endif

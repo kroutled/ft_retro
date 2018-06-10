@@ -83,3 +83,13 @@ void    Enemy::ft_moveDown( void )
 int    Enemy::getMaxX(void) {
     return this->_maxXPos;    
 }
+
+int     Enemy::getY( void )
+{
+    return this->_yPos;
+}
+
+int     Enemy::getX( void )
+{
+    return this->_xPos;
+}

@@ -27,6 +27,7 @@ class Entity{
         int     _xPos;
         int     _yPos;
         char    _body;
+        int     _score;
 
     public:
 

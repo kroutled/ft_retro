@@ -70,3 +70,13 @@ void    Lazers::ft_moveDown( void )
     mvaddch(this->_yPos, this->_xPos, this->_body);
     return;
 }
+
+int     Lazers::getY( void )
+{
+    return this->_yPos;
+}
+
+int     Lazers::getX( void )
+{
+    return this->_xPos;
+}

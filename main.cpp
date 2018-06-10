@@ -67,8 +67,31 @@ int main(void)
             bullets = new Lazers(0, 0, y, x, '.');
             bullets->placeBullet(player.getY(), player.getX());
         }
+
         if (bullets)
+        {
             bullets->ft_moveUp();
+            int j = 0;
+            while (j < 5)
+            {
+                if (enemies[j].getX() == bullets->getX() && enemies[j].getY() == bullets->getY())
+                {
+                    enemies[j].displayEnemy();
+                    mvaddch(bullets->getY(), bullets->getX(), ' ');
+                    delete bullets;
+                    bullets = NULL;              
+                    break;
+                }
+                if (bullets->getY() == 1)
+                {
+                    mvaddch(bullets->getY(), bullets->getX(), ' ');
+                    delete bullets;
+                    bullets = NULL;       
+                    break;
+                }
+                j++;
+            }
+        }
         enemies[i].ft_moveDown();
         refresh();
         usleep(80000);
