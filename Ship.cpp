@@ -48,7 +48,7 @@ Ship    &Ship::operator=(Ship const &rhs)
 void    Ship::setup( void )
 {
     this->_xPos = this->_maxXPos / 2;
-    this->_yPos = this->_maxYPos -3;
+    this->_yPos = this->_maxYPos -2;
     mvaddch(this->_yPos, this->_xPos, this->_body);
 }
 

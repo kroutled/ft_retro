@@ -36,31 +36,32 @@ int main(void)
     int y = 0;
     int key = 0;
     int i = 0;
+    int run = 1;
 
     ft_createWindow();
     getmaxyx(stdscr, y, x);
 
     Ship    player = Ship(0, 0, y, x, '^');
-    Enemy   enemies[5];
+    Enemy   *enemies[5];
     Lazers  *bullets = NULL;
     
     while (i < 5)
     {
-        enemies[i] = Enemy(0, 0, y, x, 'O');
-        enemies[i].displayEnemy();
+        enemies[i] = new Enemy(0, 0, y, x, 'O');
+        enemies[i]->displayEnemy();
         i++;
     }
     
     player.setup();
     
-    while (1) {
+    while (run == 1) {
         
         i = (i + 1) % 5;
         box(stdscr, '|', '-');
         key = getch();
         player.ft_getInput(key);
         if (player.ft_getInput(key) == 0)
-            break;
+            run = 0;
             
         if (key == KEY_UP && bullets == NULL)
         {   
@@ -74,9 +75,11 @@ int main(void)
             int j = 0;
             while (j < 5)
             {
-                if (enemies[j].getX() == bullets->getX() && enemies[j].getY() == bullets->getY())
+                if (enemies[j]->getX() == bullets->getX() && enemies[j]->getY() == bullets->getY())
                 {
-                    enemies[j].displayEnemy();
+                    delete enemies[j];
+                    enemies[j] = new Enemy(0, 0, y, x, 'O');
+                    enemies[j]->displayEnemy();
                     player.setScore(10);
                     mvaddch(bullets->getY(), bullets->getX(), ' ');
                     delete bullets;
@@ -91,18 +94,18 @@ int main(void)
                     break;
                 }
                 j++;
-                int k = 0;
-                while (k < 5)
-                {
-                    if (enemies[k].getY() == player.getY())
-                        endwin();
-                    k++;   
-                }
             }   
 
         }
-        enemies[i].ft_moveDown();
-        if (enemies[i].getY() == player.getY())
+        enemies[i]->ft_moveDown();
+        int k = 0;
+        while (k < 5)
+        {
+            if (enemies[k]->getY() == (y - 2))
+                run = 0;
+            k++;   
+        }
+        if (enemies[i]->getY() == player.getY())
             endwin();
         refresh();
         usleep(80000);

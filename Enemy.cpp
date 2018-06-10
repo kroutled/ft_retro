@@ -44,7 +44,7 @@ Enemy   &Enemy::operator=(Enemy const &rhs)
 
 void    Enemy::displayEnemy( void )
 {
-    int i = rand() % 200 + 1;
+    int i = rand() % this->_maxXPos + 1;
     this->_yPos = 1;
     this->_xPos = i;
     mvaddch(this->_yPos, this->_xPos, this->_body);

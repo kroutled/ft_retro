@@ -23,7 +23,7 @@ class Enemy : public Entity{
         Enemy( void );
         Enemy( int h, int w, int maxh, int maxy, char body );
         Enemy( Enemy const &src );
-        ~Enemy( void );
+        virtual ~Enemy( void );
 
         Enemy  &operator=( Enemy const &rhs );
 
