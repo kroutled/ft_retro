@@ -71,3 +71,13 @@ int    Ship::getY( void )
 {
     return this->_yPos;
 }
+
+void    Ship::getScore( void )
+{
+    return this->_score;
+}
+
+void    Ship::setScore( int score)
+{
+    this->_score += 10;
+}

@@ -31,6 +31,7 @@ class Ship : public Entity{
         void    setup( void );
         int    getX( void );
         int    getY( void );
+        void   setScore( int score );
 };
 
 #endif

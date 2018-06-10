@@ -77,6 +77,7 @@ int main(void)
                 if (enemies[j].getX() == bullets->getX() && enemies[j].getY() == bullets->getY())
                 {
                     enemies[j].displayEnemy();
+                    player.setScore(10);
                     mvaddch(bullets->getY(), bullets->getX(), ' ');
                     delete bullets;
                     bullets = NULL;              
@@ -90,9 +91,19 @@ int main(void)
                     break;
                 }
                 j++;
-            }
+                int k = 0;
+                while (k < 5)
+                {
+                    if (enemies[k].getY() == player.getY())
+                        endwin();
+                    k++;   
+                }
+            }   
+
         }
         enemies[i].ft_moveDown();
+        if (enemies[i].getY() == player.getY())
+            endwin();
         refresh();
         usleep(80000);
     }
