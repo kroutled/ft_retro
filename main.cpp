@@ -40,34 +40,41 @@ int main(void)
     ft_createWindow();
     getmaxyx(stdscr, y, x);
 
-    Ship    player = Ship(0, 0, y, x, '$');
-    Lazers  bullets = Lazers(0, 0, y, x, '.');
+    Ship    player = Ship(0, 0, y, x, '^');
     Enemy   enemies[5];
+    Lazers  *bullets = NULL;
+    
     while (i < 5)
     {
-        enemies[i] = Enemy(0, 0, y, x, '#');
+        enemies[i] = Enemy(0, 0, y, x, 'O');
         enemies[i].displayEnemy();
         i++;
     }
+    
     player.setup();
+    
     while (1) {
+        
         i = (i + 1) % 5;
         box(stdscr, '|', '-');
         key = getch();
         player.ft_getInput(key);
         if (player.ft_getInput(key) == 0)
             break;
-        bullets.placeBullet(player.getY(), player.getX());
-        if (key == KEY_UP)
-        {
-            bullets.ft_moveUp();
+            
+        if (key == KEY_UP && bullets == NULL)
+        {   
+            bullets = new Lazers(0, 0, y, x, '.');
+            bullets->placeBullet(player.getY(), player.getX());
         }
+        if (bullets)
+            bullets->ft_moveUp();
         enemies[i].ft_moveDown();
         refresh();
         usleep(80000);
-                
     }
+    delete bullets;
+    bullets = NULL;
     endwin();
-
     return (0);
 }

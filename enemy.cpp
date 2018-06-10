@@ -68,7 +68,6 @@ char     Enemy::getBody( void )
 void    Enemy::ft_moveUp( void )
 {
     mvaddch(this->_yPos, this->_xPos, ' ');
-    
     this->_yPos--;
     return;
 }

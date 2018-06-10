@@ -52,6 +52,7 @@ void    Lazers::placeBullet (int y, int x)
 {
     this->_xPos = x;
     this->_yPos = y - 1;
+    mvaddch(this->_yPos, this->_xPos, this->_body);
 }
 
 void    Lazers::ft_moveUp( void )

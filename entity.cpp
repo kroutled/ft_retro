@@ -14,13 +14,11 @@
 
 Entity::Entity ( void )
 {
-    std::cout << "Entity void created" << std::endl;
     return;
 }
 
 Entity::Entity (int maxXPos, int maxYPos, int xPos, int yPos, char body) : _maxXPos(xPos), _maxYPos(yPos), _xPos(maxXPos), _yPos(maxYPos), _body(body)
 {
-    std::cout << "Entity created" << std::endl;
     return;
 }
 
