@@ -20,7 +20,7 @@ class Ship : public Entity{
     private:
 
     public:
-        Ship( int h, int w, int maxh, int maxy, char body );
+        Ship( int w, int h, int maxw, int maxh, char body );
         Ship(Ship const &src);
         ~Ship( void );
 
@@ -32,6 +32,8 @@ class Ship : public Entity{
         int    getX( void );
         int    getY( void );
         void   setScore( int score );
+        int    getScore();
 };
 
 #endif
+

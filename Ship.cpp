@@ -10,16 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "Ship.hpp"
 
-Ship::Ship ( int h, int w, int maxh, int maxw, char body ) //: Entity (h, w, maxw, maxh, body)
+Ship::Ship ( int w, int h, int maxw, int maxh, char body )
 {
     this->_xPos = w;
     this->_yPos = h;
     this->_maxXPos = maxw;
     this->_maxYPos = maxh;
     this->_body = body;
-    std::cout << "ship created" << std::endl;
+    this->_score = 0;
     return;
 }
 
@@ -75,4 +76,8 @@ int    Ship::getY( void )
 void    Ship::setScore( int score)
 {
     this->_score += score;
+}
+
+int     Ship::getScore(){
+    return this->_score;
 }

@@ -21,7 +21,7 @@ class Enemy : public Entity{
 
     public:
         Enemy( void );
-        Enemy( int h, int w, int maxh, int maxy, char body );
+        Enemy( int w, int h, int maxw, int maxh, char body );
         Enemy( Enemy const &src );
         virtual ~Enemy( void );
 
@@ -40,3 +40,4 @@ class Enemy : public Entity{
 };
 
 #endif
+

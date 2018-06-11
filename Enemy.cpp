@@ -14,9 +14,8 @@
 
 Enemy::Enemy( void ) {}
 
-Enemy::Enemy(int h, int w, int maxh, int maxw, char body) : Entity (h, w, maxh, maxw, body)
+Enemy::Enemy( int w, int h, int maxw, int maxh, char body ) : Entity ( w, h, maxw, maxh, body)
 {
-    //std::cout << "enemy created" << std::endl;
     return;
 }
 

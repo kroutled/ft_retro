@@ -17,7 +17,7 @@ Entity::Entity ( void )
     return;
 }
 
-Entity::Entity (int maxXPos, int maxYPos, int xPos, int yPos, char body) : _maxXPos(xPos), _maxYPos(yPos), _xPos(maxXPos), _yPos(maxYPos), _body(body)
+Entity::Entity (int xPos, int yPos, int maxXPos, int maxYPos, char body) : _xPos(xPos), _yPos(yPos), _maxXPos(maxXPos), _maxYPos(maxYPos), _body(body)
 {
     return;
 }
@@ -43,22 +43,6 @@ Entity     &Entity::operator=( Entity const &rhs)
 
     return *this;
 }
-
-// void    Entity::ft_moveUp( void )
-// {
-//     mvaddch(this->_yPos, this->_xPos, ' ');
-    
-//     this->_yPos--;
-//     return;
-// }
-
-// void    Entity::ft_moveDown( void )
-// {
-//     mvaddch(this->_yPos, this->_xPos, ' ');
-    
-//     this->_yPos++;
-//     return;
-// }
 
 void    Entity::ft_moveRight( void )
 {

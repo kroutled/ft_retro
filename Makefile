@@ -1,7 +1,18 @@
 NAME = ft_retro
 
-all:
-	g++ -Wall -Werror -Wextra main.cpp Ship.cpp Entity.cpp Enemy.cpp Lazers.cpp -lncurses -o $(NAME)
+FILES = main.cpp Entity.cpp Game.cpp Enemy.cpp Lazers.cpp Ship.cpp
+
+FLAGS =  -Wall -Wextra -Werror -lncurses
+
+all: $(NAME)
+
+$(NAME):
+	clang++ $(FLAGS) -o $(NAME) $(FILES) 
 
 clean:
-	rm -rf $(NAME)
+	/bin/rm -rf *.o
+
+fclean: clean
+	/bin/rm -rf $(NAME) *.a
+
+re: fclean all

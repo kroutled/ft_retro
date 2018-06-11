@@ -21,7 +21,7 @@ class Lazers : public Entity{
 
     public:
         Lazers( void );
-        Lazers( int h, int w, int maxh, int maxw, char body );
+        Lazers( int w, int h, int maxw, int maxh, char body );
         Lazers( Lazers const &src);
         virtual ~Lazers( void );
 

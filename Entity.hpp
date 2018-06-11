@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #ifndef ENTITY_HPP
 # define ENTITY_HPP
 
@@ -22,17 +23,17 @@ class Entity{
     private:
 
     protected:
-        int     _maxXPos;
-        int     _maxYPos;
         int     _xPos;
         int     _yPos;
+        int     _maxXPos;
+        int     _maxYPos;
         char    _body;
         int     _score;
 
     public:
 
         Entity ( void );
-        Entity( int xPos, int yPos, int maxXPos, int maxYPos, char body);
+        Entity( int maxXPos, int maxYPos, int xPos, int yPos,  char body);
         Entity( Entity const &src );
         ~Entity( void );
 
@@ -48,3 +49,4 @@ class Entity{
 };
 
 #endif 
+

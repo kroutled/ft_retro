@@ -10,12 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "Lazers.hpp"
 #include "unistd.h"
 
 Lazers::Lazers( void ){}
 
-Lazers::Lazers(int h, int w, int maxh, int maxw, char body) : Entity(h, w, maxh, maxw, body)  
+Lazers::Lazers(int w, int h, int maxw, int maxh, char body) : Entity(w, h, maxw, maxh, body)  
 {
     return;
 }
@@ -41,12 +42,6 @@ Lazers  &Lazers::operator=(Lazers const &rhs)
 
     return *this;
 }
-
-// void Lazers::moveUp(void) {
-//     mvaddch(this->_yPos, this->_xPos, ' ');
-//     this->_yPos--;
-//     mvaddch(this->_yPos, this->_xPos, this->_body);
-// }
 
 void    Lazers::placeBullet (int y, int x)
 {
